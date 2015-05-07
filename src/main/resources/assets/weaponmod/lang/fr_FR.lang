@@ -7,36 +7,91 @@ item.spear.stone.name=Lance en pierre
 item.spear.iron.name=Lance en fer
 item.spear.diamond.name=Lance en diamant
 item.spear.gold.name=Lance en or
+item.spear.bronze.name=
+item.spear.thyrium.name=
+item.spear.copper.name=
+item.spear.adamantium.name=
+item.spear.onyx.name=
+item.spear.tin.name=
+item.spear.steel.name=
+item.spear.mythril.name=
+item.spear.sinisite.name=
 
 item.halberd.wood.name=Hallebarde en bois
 item.halberd.stone.name=Hallebarde en pierre
 item.halberd.iron.name=Hallebarde en fer
 item.halberd.diamond.name=Hallebarde en diamant
 item.halberd.gold.name=Hallebarde en or
+item.halberd.bronze.name=
+item.halberd.thyrium.name=
+item.halberd.copper.name=
+item.halberd.adamantium.name=
+item.halberd.onyx.name=
+item.halberd.tin.name=
+item.halberd.steel.name=
+item.halberd.mythril.name=
+item.halberd.sinisite.name=
 
 item.battleaxe.wood.name=Hache de combat en bois
 item.battleaxe.stone.name=Hache de combat en pierre
 item.battleaxe.iron.name=Hache de combat en fer
 item.battleaxe.diamond.name=Hache de combat en diamant
 item.battleaxe.gold.name=Hache de combat en or
+item.battleaxe.bronze.name=
+item.battleaxe.thyrium.name=
+item.battleaxe.copper.name=
+item.battleaxe.adamantium.name=
+item.battleaxe.onyx.name=
+item.battleaxe.tin.name=
+item.battleaxe.steel.name=
+item.battleaxe.mythril.name=
+item.battleaxe.sinisite.name=
 
 item.warhammer.wood.name=Masse en bois 
 item.warhammer.stone.name=Masse en pierre
 item.warhammer.iron.name=Masse en fer
 item.warhammer.diamond.name=Masse en diamant
 item.warhammer.gold.name=Masse en or
+item.warhammer.bronze.name=
+item.warhammer.thyrium.name=
+item.warhammer.copper.name=
+item.warhammer.adamantium.name=
+item.warhammer.onyx.name=
+item.warhammer.tin.name=
+item.warhammer.steel.name=
+item.warhammer.mythril.name=
+item.warhammer.sinisite.name=
 
 item.knife.wood.name=Couteau de lancer en bois
 item.knife.stone.name=Couteau de lancer en pierre
 item.knife.iron.name=Couteau de lancer en fer
 item.knife.diamond.name=Couteau de lancer en diamant
 item.knife.gold.name=Couteau de lancer en or
+item.knife.bronze.name=
+item.knife.thyrium.name=
+item.knife.copper.name=
+item.knife.adamantium.name=
+item.knife.onyx.name=
+item.knife.tin.name=
+item.knife.steel.name=
+item.knife.mythril.name=
+item.knife.sinisite.name=
+
 
 item.flail.wood.name=Fleau en bois
 item.flail.stone.name=Fleau en pierre
 item.flail.iron.name=Fleau en fer
 item.flail.diamond.name=Fleau en diamant
 item.flail.gold.name=Fleau en or
+item.flail.bronze.name=
+item.flail.thyrium.name=
+item.flail.copper.name=
+item.flail.adamantium.name=
+item.flail.onyx.name=
+item.flail.tin.name=
+item.flail.steel.name=
+item.flail.mythril.name=
+item.flail.sinisite.name=
 
 item.javelin.name=Javelot 
 
@@ -60,20 +115,38 @@ item.cannonball.name=Boulet de canon
 
 item.blunderbuss.name=Fusil a pompe
 item.blunder-ironpart.name=Canon du fusil a pompe
-item.shot.name=Cartouche de chevrotine
+item.shot.name=Cartouche de chevrotinem
 
 item.dummy.name=Mannequin d'entrainement
 
-item.gun-stock.name=Crosse 
+item.gun-stock.name=Crosse
 
 item.boomerang.wood.name=Boomerang en bois
 item.boomerang.stone.name=Boomerang en pierre
 item.boomerang.iron.name=Boomerang en fer
-item.boomerang.diamond.name=Boomerang en diamant
+item.boomerang.diamond.nae=Boomerang en diamant
 item.boomerang.gold.name=Boomerang en or
+item.boomerang.bronze.name=
+item.boomerang.thyrium.name=
+item.boomerang.copper.name=
+item.boomerang.adamantium.name=
+item.boomerang.onyx.name=
+item.boomerang.tin.name=
+item.boomerang.steel.name=
+item.boomerang.mythril.name=
+item.boomerang.sinisite.name=
 
 item.katana.wood.name=Katana en bois
 item.katana.stone.name=Katana en pierre
 item.katana.iron.name=Katana de fer 
 item.katana.diamond.name=Katana de diamant 
 item.katana.gold.name=Katana d'or
+item.katana.bronze.name=
+item.katana.thyrium.name=
+item.katana.copper.name=
+item.katana.adamantium.name=
+item.katana.onyx.name=
+item.katana.tin.name=
+item.katana.steel.name=
+item.katana.mythril.name=
+item.katana.sinisite.name=
