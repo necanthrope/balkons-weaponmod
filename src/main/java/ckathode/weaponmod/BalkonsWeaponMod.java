@@ -650,8 +650,14 @@ public class BalkonsWeaponMod
 
 	private Map<String, Item.ToolMaterial> simpleOreConfig() {
 		List<File> files = new ArrayList<File>();
-		files.add(new File(Loader.instance().getConfigDir()+"/AleXndr/Fusion Settings.xml"));
-		files.add(new File(Loader.instance().getConfigDir() + "/AleXndr/SimpleOres Settings.xml"));
+		File simpleOresFusionConf = new File(Loader.instance().getConfigDir()+"/AleXndr/Fusion Settings.xml");
+		File simpleOresConf = new File(Loader.instance().getConfigDir() + "/AleXndr/SimpleOres Settings.xml");
+
+		if(simpleOresFusionConf.exists())
+			files.add(simpleOresFusionConf);
+
+		if(simpleOresConf.exists())
+			files.add(simpleOresConf);
 
 		Map<String, Item.ToolMaterial> toolMaterials = new HashMap<String, Item.ToolMaterial>();
 
