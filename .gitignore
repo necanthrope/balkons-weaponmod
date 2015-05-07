@@ -20,6 +20,11 @@ hs_err_pid*
 
 /build/
 .gradle/*
+/.idea
+/run
 /bin/
 eclipse/.metadata/
 .settings/
+*.iml
+*.ipr
+*.iws

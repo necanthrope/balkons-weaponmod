@@ -1,11 +1,13 @@
 package ckathode.weaponmod;
 
 import net.minecraft.block.BlockDispenser;
+import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import org.apache.logging.log4j.Logger;
@@ -61,11 +63,25 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Mod(modid = BalkonsWeaponMod.MOD_ID, name = BalkonsWeaponMod.MOD_NAME, version = BalkonsWeaponMod.MOD_VERSION)
 public class BalkonsWeaponMod
@@ -210,6 +226,9 @@ public class BalkonsWeaponMod
 	
 	private void addModItems()
 	{
+
+		Map<String, Item.ToolMaterial> simpleMaterials = simpleOreConfig();
+
 		if (modConfig.isEnabled("spear"))
 		{
 			spearWood = new ItemMelee("spear.wood", new MeleeCompSpear(Item.ToolMaterial.WOOD));
@@ -217,6 +236,11 @@ public class BalkonsWeaponMod
 			spearSteel = new ItemMelee("spear.iron", new MeleeCompSpear(Item.ToolMaterial.IRON));
 			spearGold = new ItemMelee("spear.gold", new MeleeCompSpear(Item.ToolMaterial.GOLD));
 			spearDiamond = new ItemMelee("spear.diamond", new MeleeCompSpear(Item.ToolMaterial.EMERALD));
+
+			for (String materialName : simpleMaterials.keySet()) {
+				new ItemMelee("spear.".concat(materialName), new MeleeComponent(MeleeSpecs.SPEAR,
+						simpleMaterials.get(materialName)));
+			}
 		}
 		
 		if (modConfig.isEnabled("halberd"))
@@ -226,6 +250,11 @@ public class BalkonsWeaponMod
 			halberdSteel = new ItemMelee("halberd.iron", new MeleeCompHalberd(Item.ToolMaterial.IRON));
 			halberdGold = new ItemMelee("halberd.gold", new MeleeCompHalberd(Item.ToolMaterial.GOLD));
 			halberdDiamond = new ItemMelee("halberd.diamond", new MeleeCompHalberd(Item.ToolMaterial.EMERALD));
+
+			for (String materialName : simpleMaterials.keySet()) {
+				new ItemMelee("halberd.".concat(materialName), new MeleeComponent(MeleeSpecs.HALBERD,
+						simpleMaterials.get(materialName)));
+			}
 		}
 		
 		if (modConfig.isEnabled("battleaxe"))
@@ -235,8 +264,15 @@ public class BalkonsWeaponMod
 			battleaxeSteel = new ItemMelee("battleaxe.iron", new MeleeCompBattleaxe(Item.ToolMaterial.IRON));
 			battleaxeGold = new ItemMelee("battleaxe.gold", new MeleeCompBattleaxe(Item.ToolMaterial.GOLD));
 			battleaxeDiamond = new ItemMelee("battleaxe.diamond", new MeleeCompBattleaxe(Item.ToolMaterial.EMERALD));
+
+			for (String materialName : simpleMaterials.keySet()) {
+				new ItemMelee("battleaxe.".concat(materialName), new MeleeCompBattleaxe(
+						simpleMaterials.get(materialName)));
+			}
 		}
-		
+
+
+		Map<String, ItemMelee> simpleKnives = new HashMap<String, ItemMelee>();
 		if (modConfig.isEnabled("knife"))
 		{
 			knifeWood = new ItemMelee("knife.wood", new MeleeCompKnife(Item.ToolMaterial.WOOD));
@@ -244,6 +280,12 @@ public class BalkonsWeaponMod
 			knifeSteel = new ItemMelee("knife.iron", new MeleeCompKnife(Item.ToolMaterial.IRON));
 			knifeGold = new ItemMelee("knife.gold", new MeleeCompKnife(Item.ToolMaterial.GOLD));
 			knifeDiamond = new ItemMelee("knife.diamond", new MeleeCompKnife(Item.ToolMaterial.EMERALD));
+
+			for (String materialName : simpleMaterials.keySet()) {
+				ItemMelee knife = new ItemMelee("knife.".concat(materialName), new MeleeCompKnife(
+						simpleMaterials.get(materialName)));
+				simpleKnives.put(materialName, knife);
+			}
 		}
 		
 		if (modConfig.isEnabled("warhammer"))
@@ -253,6 +295,11 @@ public class BalkonsWeaponMod
 			warhammerSteel = new ItemMelee("warhammer.iron", new MeleeCompWarhammer(Item.ToolMaterial.IRON));
 			warhammerGold = new ItemMelee("warhammer.gold", new MeleeCompWarhammer(Item.ToolMaterial.GOLD));
 			warhammerDiamond = new ItemMelee("warhammer.diamond", new MeleeCompWarhammer(Item.ToolMaterial.EMERALD));
+
+			for (String materialName : simpleMaterials.keySet()) {
+				new ItemMelee("warhammer.".concat(materialName), new MeleeCompWarhammer(
+						simpleMaterials.get(materialName)));
+			}
 		}
 		
 		if (modConfig.isEnabled("flail"))
@@ -262,6 +309,11 @@ public class BalkonsWeaponMod
 			flailSteel = new ItemFlail("flail.iron", Item.ToolMaterial.IRON);
 			flailGold = new ItemFlail("flail.gold", Item.ToolMaterial.GOLD);
 			flailDiamond = new ItemFlail("flail.diamond", Item.ToolMaterial.EMERALD);
+
+			for (String materialName : simpleMaterials.keySet()) {
+				new ItemFlail("flail.".concat(materialName), simpleMaterials.get(materialName));
+			}
+
 		}
 		
 		if (modConfig.isEnabled("katana"))
@@ -271,6 +323,12 @@ public class BalkonsWeaponMod
 			katanaSteel = new ItemMelee("katana.iron", new MeleeComponent(MeleeSpecs.KATANA, Item.ToolMaterial.IRON));
 			katanaGold = new ItemMelee("katana.gold", new MeleeComponent(MeleeSpecs.KATANA, Item.ToolMaterial.GOLD));
 			katanaDiamond = new ItemMelee("katana.diamond", new MeleeComponent(MeleeSpecs.KATANA, Item.ToolMaterial.EMERALD));
+
+			for (String materialName : simpleMaterials.keySet()) {
+				new ItemMelee("katana.".concat(materialName), new MeleeComponent(MeleeSpecs.KATANA,
+						simpleMaterials.get(materialName)));
+			}
+
 		}
 		
 		if (modConfig.isEnabled("boomerang"))
@@ -280,6 +338,11 @@ public class BalkonsWeaponMod
 			boomerangSteel = new ItemMelee("boomerang.iron", new MeleeCompBoomerang(Item.ToolMaterial.IRON));
 			boomerangGold = new ItemMelee("boomerang.gold", new MeleeCompBoomerang(Item.ToolMaterial.GOLD));
 			boomerangDiamond = new ItemMelee("boomerang.diamond", new MeleeCompBoomerang(Item.ToolMaterial.EMERALD));
+
+			for (String materialName : simpleMaterials.keySet()) {
+				new ItemMelee("boomerang.".concat(materialName), new MeleeCompBoomerang(
+						simpleMaterials.get(materialName)));
+			}
 		}
 		
 		if (modConfig.isEnabled("firerod"))
@@ -314,7 +377,12 @@ public class BalkonsWeaponMod
 				bayonetGold = new ItemMusket("musketbayonet.gold", new MeleeCompKnife(Item.ToolMaterial.GOLD), knifeGold);
 				bayonetDiamond = new ItemMusket("musketbayonet.diamond", new MeleeCompKnife(Item.ToolMaterial.EMERALD), knifeDiamond);
 			}
-			
+
+			for (String materialName : simpleMaterials.keySet()) {
+				new ItemMusket("musketbayonet.".concat(materialName), new MeleeCompKnife(
+						simpleMaterials.get(materialName)), simpleKnives.get(materialName));
+			}
+
 			musket = new ItemMusket("musket", new MeleeCompNone(), null);
 			musket_iron_part = new WMItem("musket-ironpart");
 		}
@@ -578,7 +646,60 @@ public class BalkonsWeaponMod
 			BlockDispenser.dispenseBehaviorRegistry.putObject(Items.gunpowder, behavior);
 		}
 	}
-	
+
+
+	private Map<String, Item.ToolMaterial> simpleOreConfig() {
+		List<File> files = new ArrayList<File>();
+		files.add(new File(Loader.instance().getConfigDir()+"/AleXndr/Fusion Settings.xml"));
+		files.add(new File(Loader.instance().getConfigDir() + "/AleXndr/SimpleOres Settings.xml"));
+
+		Map<String, Item.ToolMaterial> toolMaterials = new HashMap<String, Item.ToolMaterial>();
+
+		for (File file : files) {
+
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db;
+			Document simpleOreDoc = null;
+			try {
+				db = dbf.newDocumentBuilder();
+				simpleOreDoc = db.parse(file);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			if (simpleOreDoc != null) {
+				NodeList toolConfigList = simpleOreDoc.getElementsByTagName("Tool");
+				for (int i = 0; i < toolConfigList.getLength(); i++) {
+					Element toolConfig = (Element) toolConfigList.item(i);
+					NodeList uses = toolConfig.getElementsByTagName("Uses");
+					NodeList miningLevel = toolConfig.getElementsByTagName("MiningLevel");
+					NodeList miningSpeed = toolConfig.getElementsByTagName("MiningSpeed");
+					NodeList damageVsEntity = toolConfig.getElementsByTagName("DamageVsEntity");
+					NodeList enchantability = toolConfig.getElementsByTagName("Enchantability");
+
+					if (uses.getLength() > 0) {
+						String name = toolConfig.getAttribute("Name").replaceAll(" Tools", "").toLowerCase();
+						Integer usesInt = Integer.valueOf(uses.item(0).getFirstChild().getNodeValue());
+						Integer miningLevelInt = Integer.valueOf(miningLevel.item(0).getFirstChild().getNodeValue());
+						Float miningSpeedFloat = Float.valueOf(miningSpeed.item(0).getFirstChild().getNodeValue());
+						Float damageVsEntityFloat = Float.valueOf(damageVsEntity.item(0).getFirstChild().getNodeValue());
+						Integer enchantabilityInt = Integer.valueOf(enchantability.item(0).getFirstChild().getNodeValue());
+
+						toolMaterials.put(name, EnumHelper.addToolMaterial(
+								name.toUpperCase(),
+								miningLevelInt,
+								usesInt,
+								miningSpeedFloat,
+								damageVsEntityFloat,
+								enchantabilityInt));
+
+					}
+				}
+			}
+		}
+		return toolMaterials;
+	}
+
 	/*
 	@Override
 	public int dispense(int x, int y, int z, int xVel, int zVel, World world, ItemStack item, Random random, double entX, double entY, double entZ)

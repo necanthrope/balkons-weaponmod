@@ -5,36 +5,92 @@ item.spear.stone.name=Stone Spear
 item.spear.iron.name=Iron Spear
 item.spear.diamond.name=Diamond Spear
 item.spear.gold.name=Golden Spear
+item.spear.bronze.name=Bronze Spear
+item.spear.thyrium.name=Thyrium Spear
+item.spear.copper.name=Copper Spear
+item.spear.adamantium.name=Adamantium Spear
+item.spear.onyx.name=Onyx Spear
+item.spear.tin.name=Tin Spear
+item.spear.steel.name=Steel Spear
+item.spear.mythril.name=Mithril Spear
+item.spear.sinisite.name=Sinisite Spear
 
 item.halberd.wood.name=Wooden Halberd
 item.halberd.stone.name=Stone Halberd
 item.halberd.iron.name=Iron Halberd
 item.halberd.diamond.name=Diamond Halberd
 item.halberd.gold.name=Golden Halberd
+item.halberd.bronze.name=Bronze Halberd
+item.halberd.thyrium.name=Thyrium Halberd
+item.halberd.copper.name=Copper Halberd
+item.halberd.adamantium.name=Adamantium Halberd
+item.halberd.onyx.name=Onyx Halberd
+item.halberd.tin.name=Tin Halberd
+item.halberd.steel.name=Steel Halberd
+item.halberd.mythril.name=Mithril Halberd
+item.halberd.sinisite.name=Sinisite Halberd
 
 item.battleaxe.wood.name=Wooden Battleaxe
 item.battleaxe.stone.name=Stone Battleaxe
 item.battleaxe.iron.name=Iron Battleaxe
 item.battleaxe.diamond.name=Diamond Battleaxe
 item.battleaxe.gold.name=Golden Battleaxe
+item.battleaxe.bronze.name=Bronze Battleaxe
+item.battleaxe.thyrium.name=Thyrium Battleaxe
+item.battleaxe.copper.name=Copper Battleaxe
+item.battleaxe.adamantium.name=Adamantium Battleaxe
+item.battleaxe.onyx.name=Onyx Battleaxe
+item.battleaxe.tin.name=Tin Battleaxe
+item.battleaxe.steel.name=Steel Battleaxe
+item.battleaxe.mythril.name=Mithril Battleaxe
+item.battleaxe.sinisite.name=Sinisite Battleaxe
 
 item.warhammer.wood.name=Wooden Warhammer
 item.warhammer.stone.name=Stone Warhammer
 item.warhammer.iron.name=Iron Warhammer
 item.warhammer.diamond.name=Diamond Warhammer
 item.warhammer.gold.name=Golden Warhammer
+item.warhammer.bronze.name=Bronze Warhammer
+item.warhammer.thyrium.name=Thyrium Warhammer
+item.warhammer.copper.name=Copper Warhammer
+item.warhammer.adamantium.name=Adamantium Warhammer
+item.warhammer.onyx.name=Onyx Warhammer
+item.warhammer.tin.name=Tin Warhammer
+item.warhammer.steel.name=Steel Warhammer
+item.warhammer.mythril.name=Mithril Warhammer
+item.warhammer.sinisite.name=Sinisite Warhammer
+
 
 item.knife.wood.name=Wooden Knife
 item.knife.stone.name=Stone Knife
 item.knife.iron.name=Iron Knife
 item.knife.diamond.name=Diamond Knife
 item.knife.gold.name=Golden Knife
+item.knife.bronze.name=Bronze Knife
+item.knife.thyrium.name=Thyrium Knife
+item.knife.copper.name=Copper Knife
+item.knife.adamantium.name=Adamantium Knife
+item.knife.onyx.name=Onyx Knife
+item.knife.tin.name=Tin Knife
+item.knife.steel.name=Steel Knife
+item.knife.mythril.name=Mithril Knife
+item.knife.sinisite.name=Sinisite Knife
+
 
 item.flail.wood.name=Wooden Flail
 item.flail.stone.name=Stone Flail
 item.flail.iron.name=Iron Flail
 item.flail.diamond.name=Diamond Flail
 item.flail.gold.name=Golden Flail
+item.flail.bronze.name=Bronze Flail
+item.flail.thyrium.name=Thyrium Flail
+item.flail.copper.name=Copper Flail
+item.flail.adamantium.name=Adamantium Flail
+item.flail.onyx.name=Onyx Flail
+item.flail.tin.name=Tin Flail
+item.flail.steel.name=Steel Flail
+item.flail.mythril.name=Mithril Flail
+item.flail.sinisite.name=Sinisite Flail
 
 item.javelin.name=Javelin
 
@@ -45,6 +101,16 @@ item.musketbayonet.stone.name=Musket with Stone Bayonet
 item.musketbayonet.iron.name=Musket with Iron Bayonet
 item.musketbayonet.diamond.name=Musket with Diamond Bayonet
 item.musketbayonet.gold.name=Musket with Golden Bayonet
+item.musketbayonet.bronze.name=Musket with Bronze Bayonet
+item.musketbayonet.thyrium.name=Musket with Thyrium Bayonet
+item.musketbayonet.copper.name=Musket with Copper Bayonet
+item.musketbayonet.adamantium.name=Musket with Adamantium Bayonet
+item.musketbayonet.onyx.name=Musket with Onyx Bayonet
+item.musketbayonet.tin.name=Musket with Tin Bayonet
+item.musketbayonet.steel.name=Musket with Steel Bayonet
+item.musketbayonet.mythril.name=Musket with Mithril Bayonet
+item.musketbayonet.sinisite.name=Musket with Sinisite Bayonet
+
 item.musket-ironpart.name=Musket Barrel
 item.bullet.name=Musket Round
 
@@ -74,12 +140,31 @@ item.boomerang.stone.name=Stone Boomerang
 item.boomerang.iron.name=Iron Boomerang
 item.boomerang.diamond.name=Diamond Boomerang
 item.boomerang.gold.name=Golden Boomerang
+item.boomerang.bronze.name=Bronze Boomerang
+item.boomerang.thyrium.name=Thyrium Boomerang
+item.boomerang.copper.name=Copper Boomerang
+item.boomerang.adamantium.name=Adamantium Boomerang
+item.boomerang.onyx.name=Onyx Boomerang
+item.boomerang.tin.name=Tin Boomerang
+item.boomerang.steel.name=Steel Boomerang
+item.boomerang.mythril.name=Mithril Boomerang
+item.boomerang.sinisite.name=Sinisite Boomerang
 
 item.katana.wood.name=Wooden Katana
 item.katana.stone.name=Stone Katana
 item.katana.iron.name=Iron Katana
 item.katana.diamond.name=Diamond Katana
 item.katana.gold.name=Golden Katana
+item.katana.bronze.name=Bronze Katana
+item.katana.thyrium.name=Thyrium Katana
+item.katana.copper.name=Copper Katana
+item.katana.adamantium.name=Adamantium Katana
+item.katana.onyx.name=Onyx Katana
+item.katana.tin.name=Tin Katana
+item.katana.steel.name=Steel Katana
+item.katana.mythril.name=Mithril Katana
+item.katana.sinisite.name=Sinisite Katana
+
 
 item.flintlock.name=Flintlock Pistol
 
